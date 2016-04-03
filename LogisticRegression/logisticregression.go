@@ -1,8 +1,10 @@
 package main
 
-import ("fmt"
+import (
+    "fmt"
     "math"
-    "math/rand")
+    "math/rand"
+)
 
 func getSigmoid(value float64) float64 {
     return 1 / (1 + math.Exp(-value))
@@ -78,6 +80,7 @@ func main() {
     // Generates random weights.
     var weights = []float64 { rand.Float64(), rand.Float64() }
 
+    // Trains the classifier.
     for epoch := 0; epoch < maxIterations; epoch++ {
         var loss, gradients = getBatchLoss(weights, x, y)
 
